@@ -55,7 +55,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
             SEND_MESSAGES: true,
             READ_MESSAGES: true
         });
-        message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
+        message.channel.send(`:white_check_mark: تم انشاء تذكرتك, #${c.name}.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
         .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
@@ -64,11 +64,11 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
     }).catch(console.error);
 }
 if (message.content.toLowerCase().startsWith(prefix + `close`)) {
-    if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`You can't use the close command outside of a ticket channel.`);
+    if (!message.channel.name.startsWith(`ticket-`)) return message.channel.send(`يتم استخدام هذا الامر فقط بالتذكرة.`);
 
-    message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`-confirm\`. This will time out in 10 seconds and be cancelled.`)
+    message.channel.send(`Are you sure? Once confirmed, you cannot reverse this action!\nTo confirm, type \`$confirm\`. This will time out in 10 seconds and be cancelled.`)
     .then((m) => {
-      message.channel.awaitMessages(response => response.content === '-confirm', {
+      message.channel.awaitMessages(response => response.content === '$confirm', {
         max: 1,
         time: 10000,
         errors: ['time'],
