@@ -9,7 +9,7 @@ function clean(text) {
 }
 
 const prefix = "$";
-const token = "Token Your Bot";
+const token = "NTY5NzEzMzE0MTc1NjQ3NzY1.XL0o-w.iGUKF5jneDd-pF6G4NQTFHK8GfU";
 
 client.on("ready", () => {
   console.log("Vulnix | Logged in! Server count: ${client.guilds.size}");
